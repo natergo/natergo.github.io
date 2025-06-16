@@ -1,0 +1,30 @@
+<model-viewer src="Marxstik DVE A2.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls tone-mapping="neutral" poster="poster.png" shadow-intensity="0" animation-name="Display screen" camera-orbit="-57.57deg 62.58deg 2m" field-of-view="30deg" auto-rotate shadow-softness="1" exposure="0.75" autoplay>
+    <button class="Hotspot" slot="hotspot-1" data-surface="2 0 27522 27523 27524 0.301 0.065 0.635" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Charging Port</div>
+    </button><button class="Hotspot" slot="hotspot-2" data-surface="7 0 813 814 815 0.497 0.092 0.411" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Handle</div>
+    </button><button class="Hotspot" slot="hotspot-3" data-surface="9 0 30222 30223 30224 0.128 0.735 0.137" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Trolley Attachment</div>
+    </button><button class="Hotspot" slot="hotspot-4" data-surface="10 0 1659 1660 1661 0.245 0.058 0.697" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Neck</div>
+    </button><button class="Hotspot" slot="hotspot-5" data-surface="14 0 7068 7069 7070 0.247 0.558 0.195" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Camera Head</div>
+    </button><button class="Hotspot" slot="hotspot-6" data-surface="31 0 4761 4762 4763 0.580 0.080 0.340" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Lens</div>
+    </button><button class="Hotspot" slot="hotspot-9" data-surface="33 0 6 7 8 0.751 0.182 0.067" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Tag</div>
+    </button><button class="Hotspot" slot="hotspot-10" data-surface="34 0 1065 1066 1067 0.041 0.647 0.312" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Bag of Chips</div>
+    </button><button class="Hotspot" slot="hotspot-11" data-surface="36 0 6963 6964 6965 0.237 0.374 0.389" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Display Screen</div>
+    </button>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+</model-viewer>
