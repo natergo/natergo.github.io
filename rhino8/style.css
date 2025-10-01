@@ -52,17 +52,6 @@ body{
 .site-header h1{margin:0;font-size:1.15rem}
 .site-header p.muted{margin:0;opacity:.95;color:var(--card);font-size:.9rem}
 
-/* Toggle button */
-.theme-toggle{
-  background:transparent;border:1px solid rgba(255,255,255,0.12);
-  color:var(--card);
-  padding:.4rem .6rem;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:0.9rem;
-}
-.theme-toggle:focus{outline:3px solid rgba(126,199,255,0.2);outline-offset:2px}
-
 /* Main content */
 main{margin-top:1rem}
 .steps{background:var(--card); padding:1rem; border-radius:10px; list-style:decimal; margin:0 0 1rem 1.25rem; box-shadow: 0 1px 0 rgba(0,0,0,0.04) inset}
