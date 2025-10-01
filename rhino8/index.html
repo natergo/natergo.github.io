@@ -62,21 +62,35 @@
   <main class="container">
     <h2>Step-by-Step Instructions</h2>
     <ol class="steps">
-      <li>Press <kbd>⊞ Win</kbd>, search for <strong>Example App</strong>, right-click → <em>Uninstall</em>.</li>
-      <li>Open <strong>Settings → Apps</strong>, confirm removal, restart if prompted.</li>
-      <li>Download the latest installer from the official vendor site and install.</li>
-      <li>After installation, configure according to IT guidance. If offline activation is required, contact IT for keys.</li>
-      <li>Verify the app launches correctly and report issues to support.</li>
+      <li>Press <kbd>⊞ Win</kbd>, search for <strong>Rhino 8</strong>, right-click → <em>Uninstall</em>.</li>
+      <li>Open <strong>Settings → Apps → Installed Apps</strong>, search Rhino 8, click the 3 dots on the right, click uninstall, restart if prompted.</li>
+      <li>Install the latest Rhino installer from: https://www.rhino3d.com/download/rhino/latest, open the Installer and install</li>
+      <li>After installation, open <strong>"Windows Defender Firewall with Advanced Security"</strong></li>
+      <li>Click <strong>"Inbound Rules"</strong> on the Top Left</li>
+      <li>Click <strong>"New Rules"</strong> under the Actions section on the Top Right</li>
+      <li>Follow the following:
+        <ul>RULE TYPE: Choose "Program" option</ul>
+        <ul>PROGRAM: Copy paste "C:\Program Files\Rhino 8\System\Rhino.exe"</ul>
+        <ul>ACTION: Choose "Block the connection"</ul>
+        <ul>PROFILE: Leave all checkboxes <strong>TICKED</strong></ul>
+        <ul>NAME: Name it "Rhino 8"</ul>
+      </li>
+      <li>Click Outbound Rules, repeat <strong>Steps 5-6</strong></li>
+      <li>Open Rhino 8 (you will see a prompt to enter your email)</li>
+      <li>Enter your email & tick the "I have read & agree to bla bla bla" checkbox, click "Continue"</li>
+      <li>You wil see a "Rhino cannot connect" page. This is fine. Click proceed with an offline validation</li>
+      <li>Enter the following license key: <strong>RH80-Q9R0-4A8G-8RAJ-0H9H-88BG</strong></li>
+      <li>You will see "Get Validation Code Manually". <strong>Do NOT follow their steps or instructions.</strong> Click continue.</li>
+      <li>Do NOT follow their steps or instructions.</li>
+      <div></div>
+      Congrats, enjoy your lifetime Rhino 8.
+      <div></div>
+      As long as you do not unblock Rhino from the Windows Defender Firewall, Rhino will never be able to revalidate your license key with the License Manager & Servers.
     </ol>
-
-    <div class="callout">
-      <strong>Note:</strong> Do not share license keys in this guide or repository. Obtain them securely from IT.
-    </div>
-  </main>
 
   <footer class="site-footer">
     <div class="container">
-      <small>Company internal documentation — do not share publicly.</small>
+      <small>Any problems, text @naterggo on Telegram</small>
     </div>
   </footer>
 
