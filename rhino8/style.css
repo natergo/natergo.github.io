@@ -1,3 +1,17 @@
+/* style.css - Dark-mode aware with accessible contrast */
+/* Color tokens */
+:root{
+  --bg: #fafafa;
+  --card: #ffffff;
+  --text: #111217;
+  --muted: #5a5f66;
+  --accent: #0560a8;
+  --callout-bg: #fffbe6;
+  --header-bg: #0a3a66;
+  --footer-bg: #efefef;
+  --kbd-bg: #eee;
+}
+
 /* Dark theme overrides */
 :root[data-theme="dark"]{
   --bg: #0b0f13;
@@ -37,6 +51,17 @@ body{
 .site-header .container{display:flex;align-items:center;gap:1rem;justify-content:space-between}
 .site-header h1{margin:0;font-size:1.15rem}
 .site-header p.muted{margin:0;opacity:.95;color:var(--card);font-size:.9rem}
+
+/* Toggle button */
+.theme-toggle{
+  background:transparent;border:1px solid rgba(255,255,255,0.12);
+  color:var(--card);
+  padding:.4rem .6rem;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:0.9rem;
+}
+.theme-toggle:focus{outline:3px solid rgba(126,199,255,0.2);outline-offset:2px}
 
 /* Main content */
 main{margin-top:1rem}

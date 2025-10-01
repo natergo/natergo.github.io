@@ -121,5 +121,52 @@
       });
     })();
   </script>
+
+<script src="theme-toggle.js" defer>// theme-toggle.js
+(function(){
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  const SELECTOR_KEY = 'site-theme-preference'; // values: 'light' | 'dark' | 'system'
+
+  function applyTheme(pref){
+    if(pref === 'system' || !pref){
+      // remove explicit data attr, allow prefers-color-scheme to take effect
+      root.removeAttribute('data-theme');
+      localStorage.removeItem(SELECTOR_KEY);
+    } else {
+      root.setAttribute('data-theme', pref === 'dark' ? 'dark' : 'light');
+      localStorage.setItem(SELECTOR_KEY, pref);
+    }
+    updateButtonLabel(pref);
+  }
+
+  function updateButtonLabel(pref){
+    const p = pref || localStorage.getItem(SELECTOR_KEY) || 'system';
+    if(!btn) return;
+    btn.textContent = (p === 'dark') ? 'Dark' : (p === 'light') ? 'Light' : 'System';
+    btn.setAttribute('aria-pressed', String(p === 'dark'));
+  }
+
+  // initialize from localStorage
+  const saved = localStorage.getItem(SELECTOR_KEY);
+  if(saved) applyTheme(saved);
+  else {
+    // keep current (prefers-color-scheme) — button will show System
+    updateButtonLabel('system');
+  }
+
+  // simple cycle on click: system -> dark -> light -> system
+  if(btn){
+    btn.addEventListener('click', () => {
+      const next = (localStorage.getItem(SELECTOR_KEY) || 'system') === 'system' ? 'dark'
+                 : (localStorage.getItem(SELECTOR_KEY) === 'dark') ? 'light'
+                 : 'system';
+      applyTheme(next);
+    });
+  }
+})();
+</script>
+
 </body>
+
 </html>
