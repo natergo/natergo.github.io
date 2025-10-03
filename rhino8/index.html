@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rhino 8 Commercial License</title>
+  <style>
+    /* ---------- Theme Variables ---------- */
+    :root{
+      --bg:#fafafa; --card:#fff; --text:#111217; --muted:#5a5f66;
+      --accent:#0560a8; --callout-bg:#fffbe6; --header-bg:#0a3a66;
+      --footer-bg:#efefef; --kbd-bg:#eee;
+    }
+    :root[data-theme="dark"]{
+      --bg:#0b0f13; --card:#0f1418; --text:#e6eef6; --muted:#b6c2cc;
+      --accent:#7ec7ff; --callout-bg:#1a2a36; --header-bg:#061822;
+      --footer-bg:#071018; --kbd-bg:#1b2126;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0f13; --card:#0f1418; --text:#e6eef6; --muted:#b6c2cc;
+             --accent:#7ec7ff; --callout-bg:#1a2a36; --header-bg:#061822;
+             --footer-bg:#071018; --kbd-bg:#1b2126; }
+    }
+
+    /* ---------- Layout ---------- */
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+         background:var(--bg);color:var(--text);line-height:1.5;}
+    .container{max-width:920px;margin:1.25rem auto;padding:1rem}
+
+    .site-header{background:var(--header-bg);color:var(--card);padding:1rem 0}
+    .site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .site-header h1{margin:0;font-size:1.2rem}
+    .site-header .muted{margin:0;opacity:.95;font-size:.9rem;color:var(--card)}
+
+    .theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.2);
+      color:var(--card);padding:.4rem .6rem;border-radius:8px;cursor:pointer;font-size:.9rem}
+    .theme-toggle:focus{outline:3px solid rgba(126,199,255,0.3);outline-offset:2px}
+
+    main{margin-top:1rem}
+    .steps{background:var(--card);padding:1rem;border-radius:10px;list-style:decimal;margin:0 0 1rem 1.25rem}
+    .steps li{margin:0 0 1rem}
+    .callout{background:var(--callout-bg);border-left:4px solid rgba(0,0,0,0.1);padding:.6rem;margin-top:.5rem;border-radius:6px}
+    a{color:var(--accent)}
+    .site-footer{background:var(--footer-bg);padding:.9rem;text-align:center;margin-top:1rem;color:var(--muted)}
+    kbd{background:var(--kbd-bg);border-radius:6px;padding:.15rem .35rem;font-size:.9em;color:var(--text)}
+
+    @media(max-width:640px){.site-header .container{flex-direction:column;align-items:flex-start}}
+  </style>
+
+  <main class="container">
+    <h2>How to Obtain Rhino 8 Commercial License</h2>
+    <ol class="steps">
+      <li>Press <kbd>⊞ Win</kbd>, search for <strong>Rhino 8</strong>, right-click → <em>Uninstall</em>.</li>
+      <li>Open <strong>Settings → Apps → Installed Apps</strong>, search Rhino 8, click the 3 dots on the right, click uninstall, restart if prompted.</li>
+      <li>Install the latest Rhino installer from: <strong>https://www.rhino3d.com/download/rhino/latest</strong>, open the Installer and install</li>
+      <li>After installation, open <strong>"Windows Defender Firewall with Advanced Security"</strong></li>
+      <li>Click <strong>"Inbound Rules"</strong> on the Top Left</li>
+      <li>Click <strong>"New Rules"</strong> under the Actions section on the Top Right</li>
+      <li>Follow the following:
+        <ul>RULE TYPE: Choose "Program" option</ul>
+        <ul>PROGRAM: Copy paste "C:\Program Files\Rhino 8\System\Rhino.exe"</ul>
+        <ul>ACTION: Choose "Block the connection"</ul>
+        <ul>PROFILE: Leave all checkboxes <strong>TICKED</strong></ul>
+        <ul>NAME: Name it "Rhino 8"</ul>
+      </li>
+      <li><strong>THIS IS IMPORTANT!</strong> Click <strong>Outbound Rules</strong> on the Top Left under Inbound Rules, repeat <strong>Steps 5-6</strong></li>
+      <li>Open Rhino 8 (you will see a prompt to enter your email)</li>
+      <li>Enter your email & tick the "I have read & agree to bla bla bla" checkbox, click "Continue"</li>
+      <li>You wil see a "Rhino cannot connect" page. This is fine. Click proceed with an offline validation</li>
+      <li>Enter the following license key: <strong>RH80-Q9R0-4A8G-8RAJ-0H9H-88BG</strong></li>
+      <li>You will see "Get Validation Code Manually". <strong>Do NOT follow their steps or instructions.</strong> Click continue</li>
+      <li>Enter your Validation Code: A9F1-31EE-60C6-0001-1213, click Continue</li>
+      <div>Congrats, enjoy your lifetime Rhino 8.</div>
+      <div>As long as you do not unblock Rhino from the Windows Defender Firewall, Rhino will never be able to revalidate your license key with the License Manager & Servers.</div>
+    </ol>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Any problems, text @naterggo on Telegram</small>
+    </div>
+  </footer>
+
+</script>
+</body>
+</html>
