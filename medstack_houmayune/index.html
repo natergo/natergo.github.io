@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Data Access</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .numpad-btn {
+            @apply w-16 h-16 rounded-full bg-white text-blue-500 text-3xl flex items-center justify-center transition-active active:bg-blue-100 shadow-lg;
+        }
+        .dot {
+            @apply w-3 h-3 rounded-full border-2 border-white;
+        }
+        .dot.filled {
+            @apply bg-white;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-cyan-600 to-blue-500 min-h-screen flex flex-col items-center p-8 text-white font-sans">
+
+    <div class="mt-10 mb-6">
+        <i class="fas fa-lock text-5xl"></i>
+    </div>
+
+    <h1 class="text-3xl font-bold text-left w-full max-w-xs leading-tight mb-4">
+        Enter PIN to access medical data
+    </h1>
+    
+    <p class="text-sm opacity-90 text-left w-full max-w-xs mb-8">
+        This PIN is required to view sensitive patient history and medication details.
+    </p>
+
+    <div id="pin-display" class="flex gap-4 mb-12">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6 mb-10">
+        <button onclick="press(1)" class="numpad-btn">1</button>
+        <button onclick="press(2)" class="numpad-btn">2</button>
+        <button onclick="press(3)" class="numpad-btn">3</button>
+        <button onclick="press(4)" class="numpad-btn">4</button>
+        <button onclick="press(5)" class="numpad-btn">5</button>
+        <button onclick="press(6)" class="numpad-btn">6</button>
+        <button onclick="press(7)" class="numpad-btn">7</button>
+        <button onclick="press(8)" class="numpad-btn">8</button>
+        <button onclick="press(9)" class="numpad-btn">9</button>
+        <div class="w-16"></div> <button onclick="press(0)" class="numpad-btn">0</button>
+        <button onclick="backspace()" class="w-16 h-16 flex items-center justify-center text-2xl">
+            <i class="fas fa-backspace"></i>
+        </button>
+    </div>
+
+    <button id="submit-btn" onclick="verifyPin()" class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl opacity-50 pointer-events-none transition-all">
+        <i class="fas fa-arrow-right text-blue-500 text-3xl"></i>
+    </button>
+
+    <script>
+        let currentPin = "";
+        const dots = document.querySelectorAll('.dot');
+        const submitBtn = document.getElementById('submit-btn');
+
+        function press(num) {
+            if (currentPin.length < 6) {
+                currentPin += num;
+                updateUI();
+            }
+        }
+
+        function backspace() {
+            currentPin = currentPin.slice(0, -1);
+            updateUI();
+        }
+
+        function updateUI() {
+            dots.forEach((dot, index) => {
+                if (index < currentPin.length) {
+                    dot.classList.add('filled');
+                } else {
+                    dot.classList.remove('filled');
+                }
+            });
+
+            if (currentPin.length === 6) {
+                submitBtn.classList.remove('opacity-50', 'pointer-events-none');
+            } else {
+                submitBtn.classList.add('opacity-50', 'pointer-events-none');
+            }
+        }
+
+        function verifyPin() {
+            // For a fictional app, we'll just check if it's 123456
+            if (currentPin === "123456") {
+                window.location.href = "medical-data.html";
+            } else {
+                alert("Incorrect PIN. Please try again.");
+                currentPin = "";
+                updateUI();
+            }
+        }
+    </script>
+</body>
+</html>
